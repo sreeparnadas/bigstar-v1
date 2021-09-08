@@ -1,0 +1,82 @@
+
+@media print
+{
+    body {margin-top:10px;}
+}
+
+#bill-header-div{
+    border-bottom: 1px solid black;
+}
+#buyer-details-div{
+    border-top: 1px solid black;
+    margin-top: 1px;
+
+}
+
+h1{
+    font-size: 22px;
+    color:#68696b;
+}
+
+h3{
+    font-size: 16px;
+    color: #787878;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+h5{
+    font-size: 14px;
+    font-family: Arial;
+}
+
+#show-bill-details-table thead tr th{
+    border: 1px solid #595959 !important;
+}
+#show-bill-details-table tbody tr td{
+    border: 1px solid #595959 !important;
+}
+
+#show-bill-details-table tfoot tr td{
+    border: 1px solid #595959 !important;
+}
+
+table th, table td {
+    /*border:1px solid #5a0099;*/
+    padding: 0.5em;
+}
+ul{
+    list-style: none;
+}
+
+#show-bill-details-table > thead{
+    border-top: 1px solid #595959 !important;
+    border-bottom: 1px solid #595959 !important;
+}
+/*#show-bill-details-table > tfoot > tr > td{*/
+    /*border-top: none !important;*/
+    /*border-collapse: collapse;*/
+    /*border-spacing: 0;*/
+    /*padding: 0;*/
+    /*border-right: 1px solid black; !important;*/
+/*}*/
+
+
+#show-bill-details-table tbody{
+    /*border-bottom: 2px solid #595959 !important;*/
+    border-bottom: 1px solid #595959 !important;
+}
+
+
+#show-bill-details-table tr{
+    line-height: 2px;
+}
+
+
+
+
+
+
+
+
+

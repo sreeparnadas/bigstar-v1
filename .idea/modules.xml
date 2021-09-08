@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ci_fresh.iml" filepath="$PROJECT_DIR$/.idea/ci_fresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../admin_goastar_latest/.idea/madol.iml" filepath="$PROJECT_DIR$/../admin_goastar_latest/.idea/madol.iml" />
+    </modules>
+  </component>
+</project>
+
