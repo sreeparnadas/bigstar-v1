@@ -13,11 +13,12 @@ if (!$conn) {
 $argv = $conn->query("SELECT * FROM `next_game_draws` where id=1");
 foreach($argv as $row)
 {
-     $nextDrawId = $row['next_draw_id'];
-     $drawId = $row['last_draw_id'];
+     $nextDrawId = $row['next_draw_id'];    //next draw er id
+     $drawId = $row['last_draw_id'];        // eta id of last draw, jetar result generate korte hobe ekhon (starting from 23)
+     $lastDrawSerialNumber = $row['last_draw_serial_number'];       //eta jei draw er result generate hobe taar serial number (starting from 1)
 }
 
-$sql = "UPDATE draw_master SET active = IF(serial_number=$nextDrawId, 1,0)";
+$sql = "UPDATE draw_master SET active = IF(draw_master_id=$nextDrawId, 1,0)";
 $sql2= "call insert_2d_game_result_details($drawId);";
 if (mysqli_query($conn, $sql)) {
     //echo "Draw time updated</br>";
@@ -32,13 +33,17 @@ foreach($count_draw as $row)
      $total_draw = $row['total'];
 }
 
-if($nextDrawId==$total_draw)
-    $nextDrawId = 1;
-else
+if($lastDrawSerialNumber==$total_draw){
+    $nextDrawId = 23;
+    $lastDrawSerialNumber = 1;
+}
+else{
     $nextDrawId = $nextDrawId+1;
+    $lastDrawSerialNumber = $lastDrawSerialNumber + 1;
+}
     
 if($drawId==$total_draw)
-    $drawId = 1;
+    $drawId = 23;
 else
     $drawId = $drawId+1;
 
