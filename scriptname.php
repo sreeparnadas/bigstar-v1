@@ -26,6 +26,12 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+if (mysqli_query($conn, $sql2)) {
+    //echo "Result added</br>";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
 
 $count_draw = $conn->query("SELECT count(*) as total FROM `draw_master`");
 foreach($count_draw as $row)
