@@ -425,7 +425,8 @@ class game_model extends CI_Model {
 				    case when series_name = 'E' then row_number end as e_row,
 				    case when series_name = 'E' then column_number end as e_column
 				from (select 
-						 draw_master.start_time
+                        draw_master.serial_number
+						 ,draw_master.start_time
 						, draw_master.end_time
 						, draw_master.meridiem
 						,play_series.series_name
@@ -439,7 +440,7 @@ class game_model extends CI_Model {
 				    inner join play_series on result_details.play_series_id = play_series.play_series_id
 						where date(result_master.record_time)=?
 				    order by result_details.result_details_id) as table1
-				    group by result_details_id) as table2 group by result_master_id";
+				    group by result_details_id) as table2 group by result_master_id order by serial_number desc";
         $result=$this->db->query($sql,array($result_date));
         if($result!=null){
             return $result;
